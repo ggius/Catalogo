@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+ 
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="giuseppevitolo.CatalogoLibriController">
+<children>
+<SplitPane dividerPositions="0.19365609348914858" layoutX="14.0" layoutY="99.0" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<items>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="232.0">
+<children>
+<Label layoutX="14.0" layoutY="151.0" prefHeight="17.0" prefWidth="94.0" text="Tipo di Volume" />
+<Separator layoutX="3.0" layoutY="215.0" prefWidth="200.0" />
+<Separator layoutX="3.0" layoutY="287.0" prefWidth="200.0" />
+<Label layoutX="14.0" layoutY="228.0" prefHeight="17.0" prefWidth="125.0" text="Anno di Pubblicazione" />
+<Label layoutX="14.0" layoutY="256.0" text="da" />
+<TextField fx:id="iniziodate" layoutX="39.0" layoutY="251.0" prefHeight="27.0" prefWidth="68.0" promptText="1965" />
+<Label layoutX="120.0" layoutY="256.0" text="a" />
+<TextField fx:id="finedate" layoutX="137.0" layoutY="251.0" prefHeight="27.0" prefWidth="76.0" promptText="2021" />
+<Label layoutX="14.0" layoutY="299.0" text="Limite risultati" />
+<TextField fx:id="limit" layoutX="103.0" layoutY="303.0" prefHeight="27.0" prefWidth="110.0" promptText="100" />
+<Button fx:id="aggbutt" layoutX="80.0" layoutY="343.0" mnemonicParsing="false" onAction="#add" text="Aggiorna" />
+<ProgressIndicator fx:id="indicator" layoutX="51.0" layoutY="381.0" progress="0.0" />
+<ComboBox fx:id="combobox" layoutX="15.0" layoutY="175.0" prefHeight="27.0" prefWidth="127.0" promptText="Scegli..." />
+</children>
+</AnchorPane>
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="577.0" prefWidth="882.0">
+<children>
+<TableView fx:id="view" editable="true" layoutX="88.0" layoutY="-2.0" prefHeight="600.0" prefWidth="984.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+<columns>
+<TableColumn fx:id="isbncl" prefWidth="105.0" text="ISBN" />
+<TableColumn fx:id="codvolcl" prefWidth="60.0" text="codVol" />
+<TableColumn fx:id="titolocl" prefWidth="289.0" text="Titolo" />
+<TableColumn fx:id="annocl" prefWidth="98.0" text="Anno" />
+<TableColumn fx:id="prezzocl" prefWidth="125.0" text="Prezzo" />
+<TableColumn fx:id="pesocl" prefWidth="129.0" text="Peso" />
+<TableColumn fx:id="paginecl" prefWidth="177.0" text="Pagine" />
+</columns>
+<contextMenu>
+<ContextMenu>
+<items>
+<MenuItem fx:id="exportmenu" mnemonicParsing="false" onAction="#export" text="Esporta selezione" />
+</items>
+</ContextMenu>
+</contextMenu>
+</TableView>
+</children>
+</AnchorPane>
+</items>
+</SplitPane>
+</children>
+</AnchorPane>
